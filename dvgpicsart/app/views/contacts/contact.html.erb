@@ -1,0 +1,77 @@
+<div class="cont-Header">
+		<h1>Contact Me  |<small>&nbsp;&nbsp;I am friendly</small><span class="spanDetails">&nbsp;&#9749;</span></h1><br/>
+		<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+	</div>
+	<div class="cont-Left">
+		<form action="create" method="post">
+		  <div class="form-group">
+		    <label>Full Name</label>
+		    <input type="text" value="" class="form-control" required="true" name="_fullName" id="bs_fullName" placeholder="Full Name">
+		  </div>
+		  <div class="form-group">
+		    <label>Email address</label>
+		    <input type="email" value="" class="form-control" required="true" name="_email" id="bs_email" placeholder="Email">
+		  </div>
+		  <div class="form-group">
+		  	<label>Message</label>
+		  	<textarea class="form-control" value="" id="bs_message" name="_message" required="true" placeholder="Please write your message here"></textarea>
+		  </div>		  
+  		  <button type="submit" class="btn btn-danger">Send Message</button>
+		</form>
+	</div>
+	<div class="cont-Right">		
+		<form class="form-horizontal">
+		  <div class="form-group dv-address">		    
+		    <span class="spanDetails">&#9971;</span><span class="lblDetails"><strong>Devansh Gupta</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#234, BTM 2nd Stage<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bangalore - 560063</span>	   
+		  </div>
+		  <div class="form-group dv-mobile"><span class="spanDetails">&#9990;</span>
+		    <label class="lblDetails" for="contactNumber">+91 - 8888999920</label>
+		  </div>
+		  <div class="form-group dv-email">
+		    <span class="spanDetails">&#9997;</span><label class="lblDetails" for="contactEmail">pingme@dvgpicsart.com</label>		  
+		  </div><br/>
+		  <% flash.each do |key, value| %>
+        		<div id="show-alert" class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>		 
+		</form>
+	</div>		
+<style type="text/css">
+#show-alert{
+	font-weight: bold;
+	font-size: 25px;
+	color: aqua;
+}
+.dv-address{
+	margin-top:20px;
+}
+.cont-Header{
+	margin-top: 0px;
+	width:100%;
+	text-align: center;
+}
+.cont-Left{
+	width:50%;
+	padding: 2% 5% 5% 15%;
+	float:left;
+}
+.cont-Right{
+	width:50%;
+	padding: 2% 15% 5% 5%;
+	float:right;
+}
+#bs_message{
+	height:185px;
+}
+.spanDetails{
+	margin 1% 3% 3% 7%;
+	font-size:30px;
+	color:black;
+	padding-right: 10px;
+	height: 100px;
+}
+.lblDetails{
+	font-size: 17px;
+	margin-left:10px;
+	height:auto;
+}
+</style>
