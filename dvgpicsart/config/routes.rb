@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   match "/contacts/create" => "contacts#create", via: [:post]
 
   match "gallery" => "gallery#displayCategories", via: [:get]
-  match "gallery/category" => "gallery#getPicsByCategory", via: [:post]
+  match "gallery/category" => "gallery#getPicsByCategory", via: [:get]
   
   #match 'contacts' => 'contacts#new', :as => 'contact', :via => :get 
   #match 'contacts' => 'contacts#create', :as => 'contact', :via => :post

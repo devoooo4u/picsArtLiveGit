@@ -8,15 +8,12 @@ class GalleryController < ApplicationController
 	end
 	def getPicsByCategory
 		@categories = Category.all
-		#puts '***********'
-		#puts params[:id]
-		#puts '************'
 		@category = Category.find(params[:id])		
 		#redirect_to 'gallery/category'
 		render template: "gallery/gallery", :layout => "master" 		
 	end
 	def load_cat1pics
-		@category = Category.first		
+		@category = Category.first	
 	end
 
 end

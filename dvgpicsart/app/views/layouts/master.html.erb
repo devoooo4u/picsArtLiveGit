@@ -10,7 +10,7 @@
 <body class="m-body">
 <div id="m-header">
 	<a href="/index">
-        <span class="header-logotext">Dev's Photography</span>
+        <span class="header-logotext">Dev's&nbsp; Photography</span>
     </a>	
 		<ul id="nav-ul">
 			<li><a class="active" href="/pages/about">About</a></li>
@@ -29,7 +29,7 @@
 <div class="footer-right">
 	<ul id="social-ul">
 		<li>
-			<a target="_blank" href="#" class="a-icon">
+			<a target="_blank" href="https://www.facebook.com/DvGpicsart" class="a-icon">
 				<img src="../assets/Facebook.png" class="icon-animation">
 			</a>
 		</li>
@@ -110,7 +110,7 @@ ul#nav-ul li a:hover {
 	box-shadow: 3px;
 	height: 60px;
 	width:100%;
-	z-index: 2;
+	z-index: 4;
 }
 
 #m-footer{
@@ -121,7 +121,7 @@ ul#nav-ul li a:hover {
 	box-shadow: 2px;
 	height: 50px;
 	width:100%;
-	z-index: 2;
+	z-index: 4;
 	-webkit-transition-property: height;
 	-webkit-transition-duration: .3s;
 	-webkit-transition-timing-function: linear; 
@@ -129,20 +129,22 @@ ul#nav-ul li a:hover {
 #m-footer:hover{
 	height: 65px;
 	border-top: 3px solid #2fe605;
-
+	background-color: rgba(10,10,10,0.85);
+	transition: all 0.4s ease-in-out;
 }
 
-@font-face{font-family: margurite; src: url('marguerite.ttf');}
+@font-face{font-family: margurite; src: url('../assets/marguerite.ttf');}
 
 .header-logotext {
-    font-weight: 700;
+    font-weight: 500;
     font-family: margurite;
     text-transform: capitalize;
     font-size: 30px;
-    color:#8bc34a;
+    color:rgb(213, 165, 218);
 	margin-left: 3%;
 	position: fixed;
-	height: 60px;  
+	height: 60px;
+	padding-top: 12px;  
 }
 .footer-text{
 	color: whitesmoke;

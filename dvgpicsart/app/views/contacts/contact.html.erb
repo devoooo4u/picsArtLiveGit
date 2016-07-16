@@ -1,4 +1,5 @@
 <div class="cont-Header">
+<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<h1>Contact Me  |<small>&nbsp;&nbsp;I am friendly</small><span class="spanDetails">&nbsp;&#9749;</span></h1><br/>
 		<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
 	</div>
@@ -16,13 +17,16 @@
 		  	<label>Message</label>
 		  	<textarea class="form-control" value="" id="bs_message" name="_message" required="true" placeholder="Please write your message here"></textarea>
 		  </div>		  
-  		  <button type="submit" class="btn btn-danger">Send Message</button>
+  		  <button type="submit" class="btn btn-danger">Send Message</button><br/>
+  		  <% flash.each do |key, value| %>
+        		<div id="show-alert" class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
 		</form>
 	</div>
 	<div class="cont-Right">		
 		<form class="form-horizontal">
 		  <div class="form-group dv-address">		    
-		    <span class="spanDetails">&#9971;</span><span class="lblDetails"><strong>Devansh Gupta</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#234, BTM 2nd Stage<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bangalore - 560063</span>	   
+		    <span class="spanDetails">&#9971;</span><span class="lblDetails"><strong>Devansh Gupta</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#234, BTM 2nd Stage<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bangalore - 560063</span>				   
 		  </div>
 		  <div class="form-group dv-mobile"><span class="spanDetails">&#9990;</span>
 		    <label class="lblDetails" for="contactNumber">+91 - 8888999920</label>
@@ -30,19 +34,18 @@
 		  <div class="form-group dv-email">
 		    <span class="spanDetails">&#9997;</span><label class="lblDetails" for="contactEmail">pingme@dvgpicsart.com</label>		  
 		  </div><br/>
-		  <% flash.each do |key, value| %>
-        		<div id="show-alert" class="alert alert-<%= key %>"><%= value %></div>
-          <% end %>		 
+		  <div id="googleMap"></div>
+		  
 		</form>
 	</div>		
 <style type="text/css">
 #show-alert{
 	font-weight: bold;
-	font-size: 25px;
-	color: aqua;
+	font-size: 20px;
+	color: red;
 }
 .dv-address{
-	margin-top:20px;
+	margin-top:0px;
 }
 .cont-Header{
 	margin-top: 0px;
@@ -74,4 +77,21 @@
 	margin-left:10px;
 	height:auto;
 }
+#googleMap{
+	width:450px;
+	height:220px;
+	margin-top: -20px;
+	border:1px solid gray;
+}
 </style>
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(12.915932,77.6113089),
+    zoom:14,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>

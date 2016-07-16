@@ -288,6 +288,9 @@ a:focus {
     background-size: cover;
     -o-background-size: cover;
 }
+.download-section-story{
+      background: url(downloads-bg2.jpg) no-repeat center center scroll; 
+}
 
 #map {
     width: 100%;
